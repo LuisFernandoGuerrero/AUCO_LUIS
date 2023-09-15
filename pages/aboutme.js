@@ -9,7 +9,7 @@ export default function AboutMe() {
       description="Página sobre mi donde expresar tus aspiraciones profesionales, tus metas a corto y largo plazo, y cómo crees que tu contribución puede beneficiar a la empresa."
     >
       <div className='w-4/5 mx-auto'>
-        <div className='md:w-3/5 text-center my-4 mx-auto'>
+        <div className='w-4/5 md:w-3/5 text-center my-4 mx-auto'>
           <h1 className='uppercase font-black text-blue-950 text-3xl'>sobre mi - fernando guerrero</h1>
         </div>
         <div className='mx-auto my-8 flex flex-col gap-5'>

@@ -3,22 +3,8 @@ import Layout from '../../components/layout'
 import Comment from "../../components/comment";
 import Link from "next/link";
 
-export default function PostIndividual({ posts, usuarios, comentarios, favoritos, agregarFavorito, borrarFavorito }) {
-
-    const { body, title, userId, id } = posts;
-
-    const marcarFavorito = () => {
-        const postAgregado = {
-            id: posts.id,
-            title,
-            body,
-            userId,
-            usuarioPost: usuarios
-        }
-
-        agregarFavorito(postAgregado)
-    }
-
+export default function Post({ posts, usuarios, comentarios }) {
+    const { body, title, userId } = posts;
     return (
         <Layout
             title={title}
@@ -41,14 +27,8 @@ export default function PostIndividual({ posts, usuarios, comentarios, favoritos
                 </div>
                 <div className="flex flex-col gap-3">
                     <Link href={"/"} className='no-underline inline-block bg-blue-400 text-gray-700 font-medium px-4 py-1 capitalize text-center'>Volver a la página de inicio</Link>
-                    <button
-                        type='button'
-                        className={`block text-gray-700 text-center font-medium px-4 py-1 capitalize w-full mx-auto ${favoritos.some(favoritoState => favoritoState.id === id) ? 'bg-red-400' : 'bg-yellow-400'}`} 
-                        onClick={() => favoritos.some(favoritoState => favoritoState.id === id) ? borrarFavorito(id) : marcarFavorito()}
-                    > {favoritos.some(favoritoState => favoritoState.id === id) ? 'Eliminar de favoritos' : 'Agregar a Favoritos'}
-                    </button>
+                    <Link href={"/"} className='no-underline inline-block bg-blue-400 text-gray-700 font-medium px-4 py-1 capitalize text-center'>Marcar como favorito</Link>
                 </div>
-
                 <div className="my-10 w-11/12 md:w-4/6 h-auto p-7 md:p-10 bg-gray-700 rounded-xl">
                     <div className="text-white">
                         <h4 className="text-xl md:text-2xl font-black text-white">{comentarios.length} comentarios</h4>
