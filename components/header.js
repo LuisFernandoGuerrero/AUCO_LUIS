@@ -13,13 +13,17 @@ export default function Header() {
                     </a>
                 </Link>
 
-                <nav className="flex gap-4 md:gap-8 font-bold text-sm">
+                <nav className="flex gap-2 md:gap-8 font-bold text-sm items-center">
                     <Link
                         href={"/"}
                         className={`px-1 py-1 md:px-8 md:py-1 rounded-md border-2 ${root.pathname === '/' ? 'border-blue-400' : ''}`}>Blog</Link>
                     <Link
                         href={"/aboutme"}
                         className={`px-1 py-1 md:px-8 md:py-1 rounded-md border-2 ${root.pathname === '/aboutme' ? 'border-blue-400' : ''}`}>Sobre Mi</Link>
+                    
+                    <Link href={"/favoritos"}>
+                            <Image src={"/img/favorite.svg"} width={0} height={0} className="w-5 h-5" alt={"Logo favoritos"}/>
+                    </Link>
                 </nav>
             </div>
         </header>
