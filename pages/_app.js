@@ -19,7 +19,6 @@ function MyApp({ Component, pageProps }) {
 
   const agregarFavorito = favorito => {
     if (favoritos.some(favoritoState => favoritoState.id === favorito.id)) {
-      console.log('El Item ya ha sido agregado como favorito');
       return;
     }
     setFavoritos([...favoritos, favorito])
