@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Footer() {
     return (
-        <footer className="w-full py-20 border-t-2 bg-blue-950">
+        <footer className="w-full py-20 mt-4 border-t-2 bg-blue-950">
             <div className="flex w-11/12 md:w-3/5 mx-auto flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0">
                 <Link legacyBehavior href={"/"}>
                     <a>
